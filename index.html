@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI in Education - Analytics</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --bg-color: #0f172a;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --card-bg: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 60%);
+            z-index: -1;
+            animation: pulse 10s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -0.05em;
+        }
+
+        .highlight {
+            color: var(--primary);
+        }
+
+        p.subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 20px -10px rgba(99, 102, 241, 0.6);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px -10px rgba(99, 102, 241, 0.8);
+        }
+
+        .features {
+            padding: 5rem 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .card p {
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .hero { min-height: 60vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">EduAI Analytics</div>
+        <a href="#dashboard" class="cta-btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Ver App</a>
+    </header>
+
+    <section class="hero">
+        <h1>Análisis de <span class="highlight">Herramientas de IA</span> en la Educación</h1>
+        <p class="subtitle">Descubre el impacto y uso de la Inteligencia Artificial en el aula moderna mediante un dashboard interactivo potenciado con los datos de Kaggle.</p>
+        <a href="https://github.com/tu-usuario/tu-repositorio" target="_blank" class="cta-btn" onclick="alert('Una vez subas tu proyecto, cambia este link por el de Streamlit Community Cloud.')">Explorar el Dashboard</a>
+    </section>
+
+    <section class="features" id="dashboard">
+        <div class="card">
+            <h3>📊 KPIs Dinámicos</h3>
+            <p>Visualiza en segundos las métricas clave de utilización de IA a través de tarjetas de alto nivel (Streamlit metrics).</p>
+        </div>
+        <div class="card">
+            <h3>🔍 Filtrado Avanzado</h3>
+            <p>Filtra datos por características sociodemográficas y herramientas usando el poder de Pandas directamente en el navegador.</p>
+        </div>
+        <div class="card">
+            <h3>📈 Gráficos Interactivos</h3>
+            <p>Explora a fondo las tendencias y correlaciones mediante gráficos hermosos de Plotly, en modo oscuro por defecto.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Análisis IA Educativa. Creado con Python, HTML5 y CSS3.</p>
+    </footer>
+
+</body>
+</html>
